@@ -1,0 +1,15 @@
+services:
+  hugoapp:
+    build:
+      context: .
+      args:
+        PUID: 1000  # Adjust to match your host's user UID
+        PGID: 1000  # Adjust to match your host's group GID
+        ABC_PASSWORD: SywIDtofngE5ds5sXarg83cdvHyzvvFT28Q3mghaUdIUJTGnmYSJGwCY49Q  # Set the SSH password for abc user
+        HUGO_URL: https://github.com/gohugoio/hugo/releases/download/v0.134.1/hugo_extended_0.134.1_linux-amd64.deb  # Set your custom Hugo URL
+    container_name: hugo
+    volumes:
+      - ./sites:/home/abc  # Maps the host folder ./sites to /home/abc in the container
+    ports:
+      - "2223:22"  # Expose container's port 22 for SSH on host's port 2223
+    restart: unless-stopped
