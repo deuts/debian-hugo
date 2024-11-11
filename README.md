@@ -20,8 +20,8 @@ This repository provides a Dockerized setup for running [Hugo](https://gohugo.io
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/yourusername/yourrepositoryname.git
-   cd yourrepositoryname
+   git clone https://github.com/deuts/debian-hugo.git
+   cd debian-hugo
    ```
 
 2. **Modify Environment Variables** (Optional):
